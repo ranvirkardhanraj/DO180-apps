@@ -1,0 +1,102 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "route.openshift.io/v1",
+            "kind": "Route",
+            "metadata": {
+                "annotations": {
+                    "openshift.io/host.generated": "true"
+                },
+                "creationTimestamp": "2022-11-02T09:20:29Z",
+                "labels": {
+                    "app": "php-helloworld",
+                    "app.kubernetes.io/component": "php-helloworld",
+                    "app.kubernetes.io/instance": "php-helloworld"
+                },
+                "managedFields": [
+                    {
+                        "apiVersion": "route.openshift.io/v1",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:metadata": {
+                                "f:labels": {
+                                    ".": {},
+                                    "f:app": {},
+                                    "f:app.kubernetes.io/component": {},
+                                    "f:app.kubernetes.io/instance": {}
+                                }
+                            },
+                            "f:spec": {
+                                "f:port": {
+                                    ".": {},
+                                    "f:targetPort": {}
+                                },
+                                "f:to": {
+                                    "f:kind": {},
+                                    "f:name": {},
+                                    "f:weight": {}
+                                },
+                                "f:wildcardPolicy": {}
+                            }
+                        },
+                        "manager": "kubectl-expose",
+                        "operation": "Update",
+                        "time": "2022-11-02T09:20:29Z"
+                    },
+                    {
+                        "apiVersion": "route.openshift.io/v1",
+                        "fieldsType": "FieldsV1",
+                        "fieldsV1": {
+                            "f:status": {
+                                "f:ingress": {}
+                            }
+                        },
+                        "manager": "openshift-router",
+                        "operation": "Update",
+                        "time": "2022-11-02T09:20:30Z"
+                    }
+                ],
+                "name": "php-helloworld",
+                "namespace": "zdhgce-s2i",
+                "resourceVersion": "171303986",
+                "selfLink": "/apis/route.openshift.io/v1/namespaces/zdhgce-s2i/routes/php-helloworld",
+                "uid": "87ac45df-fd48-436e-8b9a-e938a22378ec"
+            },
+            "spec": {
+                "host": "php-helloworld-zdhgce-s2i.apps.ap46a.prod.ole.redhat.com",
+                "port": {
+                    "targetPort": "8080-tcp"
+                },
+                "to": {
+                    "kind": "Service",
+                    "name": "php-helloworld",
+                    "weight": 100
+                },
+                "wildcardPolicy": "None"
+            },
+            "status": {
+                "ingress": [
+                    {
+                        "conditions": [
+                            {
+                                "lastTransitionTime": "2022-11-02T09:20:30Z",
+                                "status": "True",
+                                "type": "Admitted"
+                            }
+                        ],
+                        "host": "php-helloworld-zdhgce-s2i.apps.ap46a.prod.ole.redhat.com",
+                        "routerCanonicalHostname": "apps.ap46a.prod.ole.redhat.com",
+                        "routerName": "default",
+                        "wildcardPolicy": "None"
+                    }
+                ]
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}
